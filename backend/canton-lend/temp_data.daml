@@ -1,0 +1,13 @@
+﻿module DummyData where
+import Lending
+import Daml.Script
+
+setup : Script ()
+setup = do
+    alice <- submitCmd (Party "aliceParty") $ createCmd User with userId = "u001", name = "Alice"
+    bob <- submitCmd (Party "bobParty") $ createCmd User with userId = "u002", name = "Bob"
+    now <- getTime
+    deposit1 <- submitCmd (Party "aliceParty") $ createCmd Deposit with userId = "u001", amount = 1000.0, depositedAt = now
+    deposit2 <- submitCmd (Party "bobParty") $ createCmd Deposit with userId = "u002", amount = 500.0, depositedAt = now
+    loan1 <- submitCmd (Party "aliceParty") $ createCmd Loan with userId = "u001", amount = 200.0, interestRate = 0.05, collateral = 150.0, createdAt = now
+    return ()

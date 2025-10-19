@@ -1,0 +1,34 @@
+module Lending where
+
+import DA.Time
+import DA.Optional
+
+-- User contract
+template User
+  with
+    userId : Party
+    name : Text
+  where
+    signatory userId
+
+-- Deposit contract
+template Deposit
+  with
+    userId : Party
+    amount : Decimal
+    depositedAt : Time
+  where
+    signatory userId
+    ensure amount > 0.0
+
+-- Loan contract
+template Loan
+  with
+    userId : Party
+    amount : Decimal
+    interestRate : Decimal
+    collateral : Decimal
+    createdAt : Time
+  where
+    signatory userId
+    ensure amount > 0.0 && collateral >= amount * 0.5
