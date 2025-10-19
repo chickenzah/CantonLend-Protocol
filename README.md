@@ -59,10 +59,12 @@ Hackathon: Canton Core Ideathon 2025
 
 StackUp Campaign: Getting Started with DAML on Canton
 
-GitHub Repository: [INSERT_GITHUB_LINK_HERE]
+GitHub Repository: https://github.com/chickenzah/CantonLend-Protocol
 
 Frontend Demo (Vercel): [INSERT_VERCEL_LINK_HERE]
 
 Terms of Service: https://angelhack.com/terms-of-service/
 
 Rules: https://go.d3v.gg/cantoncore-rules
+
+**Frontend Live Demo:** https://cantonlend-frontend.vercel.app
